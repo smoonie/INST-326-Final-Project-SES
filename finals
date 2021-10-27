@@ -1,3 +1,4 @@
 def write_file():
     print("Writing a file..")
     
+    print("random test")
