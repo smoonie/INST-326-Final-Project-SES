@@ -1,6 +1,5 @@
 def write_file():
     print("Writing a file..")
-    
-    print("random test")
+
+    print("Eric was here")
     sdfxcvdfs
-    
