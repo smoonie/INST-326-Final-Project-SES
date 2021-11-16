@@ -1,0 +1,48 @@
+import time
+from reportlab.lib.enums import TA_JUSTIFY
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+doc = SimpleDocTemplate("majors.pdf",pagesize=letter,
+                        rightMargin=72,leftMargin=72,
+                        topMargin=72,bottomMargin=18)
+Report=[]
+Major1 = "MAJOR1"
+Major1perc = 100
+Major2 = "MAJOR2"
+Major2perc = 0
+Major3 = "MAJOR3"
+Major3perc = 15
+Major4 = "MAJOR4"
+Major4perc = 10.5
+Major5 = "MAJOR5"
+Major5perc = 55.5
+formatted_time = time.ctime()
+full_name = "NAME"
+address_parts = ["HOUSE #, STREET", "CITY, STATE, ZIP"]
+styles=getSampleStyleSheet()
+styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY))
+ptext = '%s' % formatted_time
+Report.append(Paragraph(ptext, styles["Normal"]))
+# Create return address
+ptext = '%s' % full_name
+Report.append(Paragraph(ptext, styles["Normal"]))       
+for part in address_parts:
+    ptext = '%s' % part.strip()
+    Report.append(Paragraph(ptext, styles["Normal"]))   
+ptext = 'Dear %s:' % full_name.split()[0].strip()
+Report.append(Paragraph(ptext, styles["Normal"]))
+ptext = 'Your number 1 match is the major of %s by %s percent' % (Major1, Major1perc)
+Report.append(Paragraph(ptext, styles["Justify"]))
+ptext = 'Here are the next best matches:' 
+Report.append(Paragraph(ptext, styles["Justify"]))
+ptext = '2. %s matches by %s percent' % (Major2, Major2perc)
+Report.append(Paragraph(ptext, styles["Justify"]))
+ptext = '3. %s matches by %s percent' % ((Major3, Major3perc))
+Report.append(Paragraph(ptext, styles["Justify"]))
+ptext = '4. %s matches by %s percent' % (Major4, Major4perc)
+Report.append(Paragraph(ptext, styles["Justify"]))
+ptext = '5. %s matches by %s percent' % (Major5, Major5perc)
+Report.append(Paragraph(ptext, styles["Justify"]))
+doc.build(Report)
