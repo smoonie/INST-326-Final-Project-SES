@@ -1,5 +1,4 @@
 import pandas as pd
-import seaborn as sns
 
 def get_major_cat_list():
     """Obtains major category list
@@ -7,8 +6,8 @@ def get_major_cat_list():
     Returns:
         [set]: returns a set populated from major category column
     """
-    data = pd.read_csv('all-ages.csv')
-    data = data[data['Major_category']]
+    data = pd.read_csv('majors-list.csv')
+    data = data[data['Major_Category']]
     
     df = pd.DataFrame(data)
     major_cat_list = df.values.tolist()
@@ -22,7 +21,7 @@ def get_major_list():
     Returns:
         [set]: returns a set populated from major list column
     """
-    data = pd.read_csv('all-ages.csv')
+    data = pd.read_csv('majors-list.csv')
     data = data[data['Major']]
     
     df = pd.DataFrame(data)
@@ -37,8 +36,8 @@ def get_major_num():
     Returns:
         [set]: returns a set populated from major number column
     """
-    data = pd.read_csv('all-ages.csv')
-    data = data[data['Major_code']]
+    data = pd.read_csv('majors-list.csv')
+    data = data[data['FOD1P']]
     
     df = pd.DataFrame(data)
     major_num_list = df.values.tolist()
@@ -46,30 +45,6 @@ def get_major_num():
     print(major_num_list)
     return(major_num_list)
 
-def pairplot():
-    df = pd.read_csv("all-ages.csv")
-    sns.pairplot(df)
-    
-def seaborn():
-    df = pd.read_csv("all-ages.csv")
-    sns.lmplot(x = "Major_code", y = "Employed", data = df, \
-        hue = "Major_category")
-    sns.lmplot(x = "Major_code", y = "Unemployed", data = df, \
-        hue = "Major_category")
-    
-def employed_over_unemployed():
-    df = pd.read_csv("all-ages.csv")
-    employed_greater_unemployed = df[(df["Employed"] > \
-        df["Unemployed"]) & (df["Major_category"])]
-    print(employed_greater_unemployed)
-    
-def unemplyed_over_employed():
-    df = pd.read_csv("all-ages.csv")
-    unemployed_greater_employed = df[(df["Employed"] < \
-        df["Unemployed"]) & (df["Major_category"])]
-    print(unemployed_greater_employed)
-    
 get_major_list()
 get_major_cat_list()
 get_major_num()
-
