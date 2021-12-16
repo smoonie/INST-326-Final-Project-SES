@@ -1,0 +1,71 @@
+{
+    "question": [
+      "Would you rather:",
+      "Do you see yourself coding and working with data?",
+      "Does money matter more or enjoying what you do?",
+      "Who are you in a group project?",
+      "Do you see yourself working at a desk everyday?",
+      "You have 4 English classes to choose from, which do you pick?",
+      "You find a really shiny rock on the ground, What do you do with it?",
+      "You need to decorate your dorm, what do you use to decorate?",
+      "What was your favorite subject in school"
+    ],
+    "answer": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "options": [
+  
+      ["Go out to the bar with friends",
+        "Spend a Friday night alone",
+        "Go hiking",
+        "Hit the museum"
+      ],
+      ["Yes",
+        "No",
+        "Light coding is fine",
+        "Data is cool, no coding"
+      ],
+      ["Some Money",
+        "Enjoying what I do, but stable",
+        "Don't care if I'm just getting by",
+        "$$Billionaire$$"
+      ],
+      ["The leader",
+        "Group work makes me anxious",
+        "Doesn't care who leads",
+        "The slacker"
+      ],
+      ["Yes",
+        "No",
+        "I'll work at a desk, just not 9-5",
+        "Indifferent"
+      ],
+      ["Poetry",
+        "Composition",
+        "Technical writing",
+        "Historical literature"
+      ],
+      ["Paint it",
+        "Sell it",
+        "Write a social media post about it",
+        "Find its chemical components"
+      ],
+      ["Periodic table",
+        "PC computer",
+        "Artsy poster",
+        "Skeleton"
+      ],
+      ["English",
+        "Math",
+        "Science",
+        "Art"
+      ]
+    ]
+  }
